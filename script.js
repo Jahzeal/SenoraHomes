@@ -24,19 +24,6 @@ function showSlides(n) {
   slides[slideIndex - 1].style.display = "block";
 }
 
-// to play
-const thumbnail = document.getElementById("thumbnail");
-thumbnail.addEventListener("click", function () {
-  this.outerHTML = `
-      <iframe
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/C3LzJoHkS6Q?autoplay=1"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>`;
-});
 
 // form
 // Get the modal element
