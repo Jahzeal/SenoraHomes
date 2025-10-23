@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The greenwich</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="greenwich.css" />
+    <link rel="stylesheet" href="unit-options.css">
+  </head>
+  <body>
+    <div class="hero-container">
+      <header class="navbar property-header">
+        <div class="container property-header-container">
+          <div class="property-header-branding">
+            <a href="#" class="page-title">GreenwichPark</a>
+            <span class="sub-title">By SenoraHomes</span>
+          </div>
+
+          <div class="nav-links property-nav-links">
+            <div class="nav-item"><a href="#">HOME</a></div>
+            <div class="nav-item dropdown">
+              <a href="#">UNIT OPTIONS</a>
+              <div class="dropdown-menu">
+                <a id="list" href="unit-options.html"
+                  >The Greenwich - 2 Bed Townhome</a
+                >
+                <a id="list" href="">The Chelsea - 3 Bed Townhome</a>
+                <a id="list" href="#">The Sutton - 4 Bed Townhome</a>
+              </div>
+            </div>
+            <div class="nav-item">
+              <a href="#" class="inquire-btn" onclick="openModal()">
+                INQUIRE
+              </a>
+              <div id="brochureModal" class="modal">
+                <div class="modal-content">
+                  <span class="close-btn" onclick="closeModal()">&times;</span>
+                  <h2>GreenwichPark</h2>
+                  <p>Buying at senora is an investment in your future</p>
+
+                  <form class="brochure-form">
+                    <input type="text" placeholder="Full Name" required />
+                    <input type="email" placeholder="Email Address" required />
+                    <input type="tel" placeholder="Phone Number" required />
+
+                    <div class="input-group full-width">
+                      <label for="inquiryUnitType">Preferred Unit Type*</label>
+                      <select id="inquiryUnitType" class="custom-select">
+                        <option value="" disabled selected>
+                          Please Select
+                        </option>
+                        <option value="4BedSutton">
+                          4 Bedroom - The Sutton
+                        </option>
+                        <option value="3BedChelsea">
+                          3 Bedroom - The Chelsea
+                        </option>
+                        <option value="2BedGreenwich">
+                          2 Bedroom - The Greenwich
+                        </option>
+                      </select>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                      Send Message
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="nav-item phone-number">
+              <a href="tel:+233551700055">+233 55 170 0055</a>
+            </div>
+            <div class="nav-item logo-text">
+              <a href="index.html">INDIGOHOMES</a>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+    <section></section>
+    <section></section>
+    <footer></footer>
+  </body>
+</html>

@@ -1,0 +1,576 @@
+body{
+    font-family: "Poppins", sans-serif;
+}
+/*
+====================================
+  PROPERTY DETAILS PAGE HEADER OVERRIDES
+====================================
+*/
+.property-header {
+  /* Ensure the header is transparent/light over the hero image */
+  background-color: transparent !important;
+  box-shadow: none !important;
+  position: absolute !important; /* CRITICAL: Allows hero content to slide up */
+  z-index: 20; /* Keep it above the hero image */
+}
+
+.property-header-container {
+  /* Use flex space-between */
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+/* --- Left Side Branding --- */
+.property-header-branding {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.property-header-branding .page-title {
+  font-size: 24px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.property-header-branding .sub-title {
+  font-size: 14px;
+  font-weight: 700;
+  margin-left: 70px;
+  color: #1e3b70;
+}
+
+/* --- Right Side Navigation Links --- */
+.property-nav-links {
+  /* Override the default horizontal flex from the main nav-links */
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+/* Style all links within the header to be white */
+.property-nav-links a,
+.property-nav-links .logo-text {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+/* Specific styling for the INQUIRE button link */
+.property-nav-links .inquire-btn {
+  border: 2px solid white !important;
+  padding: 8px 18px;
+  border-radius: 25px;
+  text-shadow: none;
+  transition: background-color 0.3s;
+}
+.property-nav-links .inquire-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/*
+====================================
+  HERO SECTION ADJUSTMENTS
+====================================
+*/
+.property-details-hero {
+  /* Remove any top margin from your main stylesheet to prevent white space */
+  margin-top: 0 !important;
+}
+
+/*
+====================================
+  PROPERTY DETAILS HERO SECTION
+====================================
+*/
+.property-details-hero {
+  position: relative;
+  height: 90vh; /* Make the section full viewport height */
+  min-height: 650px; /* Ensure a minimum height for smaller viewports */
+  overflow: hidden;
+}
+
+
+/* --- 2. Overlay Card Positioning --- */
+.property-info-card-wrapper {
+  position: absolute;
+  top: 35%; /* Position slightly below the vertical center */
+  right: 5%; /* Position toward the right edge */
+  transform: translateY(
+    -50%
+  ); /* Move up by half its height for perfect vertical centering */
+  z-index: 5;
+  max-width: 450px;
+  width: 90%;
+}
+
+/* --- 3. Card Styling --- */
+.property-info-card {
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white card */
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  text-align: left;
+}
+
+/* --- Featured Tag (The small red label) --- */
+.featured-tag {
+  display: inline-block;
+  background-color: #dc3545; /* Red color */
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  margin-bottom: 15px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* --- Unit Title --- */
+.property-unit-title {
+  font-size: 38px;
+  font-weight: 700;
+  color: #222;
+  margin: 0 0 20px 0;
+}
+
+/* --- Features Grid (Icons, Values, Labels) --- */
+.property-features-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.feature-item {
+  flex: 1;
+  text-align: center;
+  color: #555;
+  border-right: 1px solid #ddd; /* Separator line between features */
+}
+.property-features-grid .feature-item:last-child {
+  border-right: none; /* Remove separator on the last item */
+}
+
+.feature-item i {
+  color: #007bff; /* Primary Blue for icons */
+  font-size: 20px;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.feature-value {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: #222;
+  line-height: 1.2;
+}
+
+.feature-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #999;
+}
+
+/* --- Price Section --- */
+.price-separator {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 15px 0;
+}
+
+.price-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+  display: block;
+}
+
+.price-value {
+  font-size: 42px;
+  font-weight: 800;
+  color: #1e3b70; /* Dark Indigo Blue */
+  display: block;
+  line-height: 1.1;
+}
+
+/*
+====================================
+  LATEST PROPERTIES SECTION
+====================================
+*/
+.latest-properties-section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.latest-properties-section .section-heading {
+  font-size: 38px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 50px;
+}
+
+/* --- 3-Column Grid Layout --- */
+.property-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* --- Individual Card Container (The <a> tag) --- */
+.property-card-item {
+  display: block;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s;
+  background-color: white;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.property-card-item:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Image and Hover Wrapper --- */
+.card-image-wrapper {
+  position: relative;
+  height: 250px; /* Fixed height for consistent image size */
+  overflow: hidden;
+  background-color: #dc3545;
+}
+
+.card-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.property-card-item:hover .card-image-wrapper img {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/*
+====================================
+  CRITICAL: HOVER OVERLAY STYLES
+====================================
+*/
+
+/* 1. The semi-transparent blue overlay */
+.hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 59, 112, 0); /* Start fully transparent */
+  opacity: 0;
+
+  /* Centering the button inside the overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Transition for smooth blue fade-in */
+  transition: background-color 0.3s, opacity 0.3s;
+}
+
+/* 2. Show blue overlay on card hover */
+.property-card-item:hover .hover-overlay {
+  background-color: rgba(30, 59, 112, 0.8); /* Dark Blue with 80% opacity */
+  opacity: 1;
+}
+
+/* 3. The 'View Property' Button */
+.view-button {
+  background-color: white;
+  color: #1e3b70; /* Dark Blue Text */
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 4px;
+  text-transform: uppercase;
+
+  /* Start button hidden and slightly elevated */
+  opacity: 0;
+  transform: translateY(20px);
+
+  /* Transition for smooth appearance */
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+/* 4. Make the button visible and move it up slightly on hover */
+.property-card-item:hover .view-button {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.1s; /* Slight delay after blue overlay appears */
+}
+
+/*
+====================================
+  CARD DETAILS STYLES
+====================================
+*/
+.card-details {
+  padding: 20px;
+  text-align: left;
+}
+
+.unit-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 5px;
+}
+
+.description {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 15px;
+  min-height: 40px; /* Ensure description lines up */
+}
+
+/* --- Features Row --- */
+.features-row {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+  margin-bottom: 20px;
+}
+
+.feat {
+  font-size: 12px;
+  color: #777;
+  flex: 1;
+  text-align: center;
+}
+
+.feat-val {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #222;
+}
+
+/* --- Price Info --- */
+.price-info {
+  text-align: left;
+}
+.price-label {
+  display: block;
+  font-size: 12px;
+  color: #777;
+  margin-bottom: 2px;
+}
+.price-value {
+  font-size: 24px;
+  font-weight: 800;
+  color: #1e3b70; /* Dark Blue Price */
+}
+
+/* 
+special */
+.dropdown-menu a{
+    font-size: small;
+}
+/* --- Responsiveness --- */
+@media (max-width: 900px) {
+  .property-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .property-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+/*
+====================================
+  UNIT TYPE SELECT FIELD STYLES
+====================================
+*/
+
+/* 1. Base input styling for the select box */
+.custom-select {
+    width: 100%;
+    padding: 12px 15px;
+    
+    border: none; 
+    border-bottom: 1px solid #ccc; 
+    background-color: transparent;
+    font-size: 16px;
+    color: #333;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+    height: auto; /* Ensures padding works correctly */
+    
+    /* CRITICAL: Hides the default browser dropdown arrow */
+
+    appearance: none;
+    
+    /* Adds a custom SVG arrow (a small dark down arrow) */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="292.4" height="292.4" viewBox="0 0 292.4 292.4"><path fill="%23333" d="M287 69.4a17.6 17.6 0 0 0-13-5.4H18.4a17.6 17.6 0 0 0-13 5.4A17.6 17.6 0 0 0 0 82.2c0 4.3 1.7 8.3 5.4 11.4l133.7 133.7c3.1 3.1 7.2 4.9 11.4 4.9s8.3-1.8 11.4-4.9l133.7-133.7c3.7-3.1 5.4-7.1 5.4-11.4a17.6 17.6 0 0 0-5.4-12.8z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center; /* Positions the custom arrow */
+    background-size: 10px; /* Sizes the custom arrow */
+}
+
+/* 2. Focus State */
+.custom-select:focus {
+    border-bottom-color: #1E3B70; /* Changes bottom border color on focus */
+    outline: none;
+}
+
+/*
+====================================
+  FINAL BLUE BANNER SECTION
+====================================
+*/
+.final-banner-section {
+  /* Main Dark Blue Background */
+  background-color: #35548c; /* Dark Indigo Blue */
+  color: white;
+  padding: 140px 20px 85px; /* Padding top, sides, and a bit less at bottom */
+  text-align: center;
+  position: relative;
+  overflow: hidden; /* Important for containing the subtle background image/pattern */
+}
+
+/* --- Subtle Background Image/Pattern --- */
+.final-banner-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-image: url("assets/estate\(new\).jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.final-banner-content {
+  max-width: 700px; /* Constrain text width for readability */
+  margin: 0 auto;
+  position: relative;
+  z-index: 2; /* Ensure text is above the background pattern */
+}
+
+.banner-title {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  color: #ffc72c; /* Yellow accent color for the title */
+}
+
+.banner-text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+}
+/*
+====================================
+  FINAL COPYRIGHT FOOTER (Legal Text)
+====================================
+*/
+.final-copyright-footer {
+  background-color: #12121e; /* Inherit the dark background from the main footer area */
+  padding: 20px 20px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+}
+
+.final-copyright-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.final-copyright-footer p {
+  font-size: 12px;
+  color: inherit;
+  margin-bottom: 5px;
+}
+
+.final-copyright-footer .privacy-link {
+  font-size: 12px;
+  color: inherit;
+  text-decoration: none;
+  margin: 0 5px;
+}
+.final-copyright-footer .privacy-link:hover {
+  color: white;
+}
+
+/*
+====================================
+  RESPONSIVENESS
+====================================
+*/
+@media (max-width: 1000px) {
+  .property-details-hero {
+    height: 60vh;
+    min-height: 500px;
+  }
+  .property-info-card-wrapper {
+    top: 50%;
+    left: 50%; /* Center card on medium screens */
+    right: auto;
+    transform: translate(-50%, -50%);
+    max-width: 400px;
+  }
+  .property-unit-title {
+    font-size: 32px;
+  }
+  .price-value {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 600px) {
+  .property-details-hero {
+    height: 100vh;
+    min-height: 550px;
+  }
+  .property-info-card-wrapper {
+    width: 95%; /* Make card nearly full width */
+    max-width: 95%;
+    padding: 0 10px;
+  }
+  .property-info-card {
+    padding: 20px;
+  }
+  .property-features-grid {
+    flex-wrap: wrap; /* Wrap features to the next line */
+  }
+  .feature-item {
+    flex: 1 1 50%; /* Each item takes 50% width */
+    margin-bottom: 15px;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+  }
+  .feature-item:nth-child(even) {
+    border-right: none;
+  }
+  .feature-item:last-child {
+    border-bottom: none;
+  }
+}

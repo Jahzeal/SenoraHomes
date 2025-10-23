@@ -1,0 +1,14 @@
+.hero-container {
+    position: relative; /* This is crucial! It anchors the 'absolute' header */
+    height: 450px; /* Give it a height so we can see the background. Adjust as needed. */
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-position: 0.8%;
+    /* background-repeat: no-repeat; */
+    background-position: center top;
+    background-image: 
+        linear-gradient(0deg, rgba(0, 0, 0, 0.59) 0.51%, rgba(0, 0, 0, 0) 43.59%, rgba(255, 255, 255, 1) 98.46%),
+        /* Bottom Layer */
+        url('assets/UNIT-BACKG.jpg');
+}

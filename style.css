@@ -1,0 +1,985 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* Use a clear, modern font. Replace 'Arial' with your preferred web font if needed */
+  font-family: "Poppins", sans-serif;
+  color: #333; /* Dark gray for body text */
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  width: 100%;
+  /* height: 100%; */
+  top: 0;
+  left: 0;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  z-index: 10;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px;
+}
+
+/* logo */
+.logo-div {
+  height: 50px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 30px;
+}
+.logo-div img {
+  width: 75%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 30px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  /* color: #333; */
+  color: #122772;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #0f0f0fd6;
+}
+
+.dropdown {
+  position: relative;
+}
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 160px;
+  /* background-color: #ebeaea; */
+  background-color: blue;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+  overflow: hidden;
+  z-index: 10;
+  width: 12rem;
+}
+.dropdown-menu a {
+  font-weight: 700;
+  font-size: 12px;
+  font-family: "Poppins", sans-serif;
+  display: block;
+  padding: 10px 15px;
+  color: white;
+  text-decoration: none;
+}
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+.nav-links a:hover {
+  color: #00e5fff4;
+}
+
+.inquire-btn {
+  background: transparent;
+  border: 2px solid #007bff;
+  color: #007bff;
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.inquire-btn:hover {
+  background: #007bff;
+  color: #fff;
+}
+
+/* Hero Slider */
+.hero-slider {
+  position: relative;
+  margin-top: 80px;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.slide {
+  display: block;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.6);
+}
+
+.hero-text h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.cta-btn {
+  background: #007bff;
+  border: none;
+  color: white;
+  padding: 20px 40px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background 0.3s;
+}
+
+.cta-btn:hover {
+  background: #0056c9;
+}
+
+/* Slider navigation */
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 2rem;
+  padding: 10px;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.3s;
+}
+
+.prev {
+  left: 30px;
+}
+.next {
+  right: 30px;
+}
+
+.prev:hover,
+.next:hover {
+  color: #007bff;
+}
+
+/* video */
+.video-thumbnail {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 600px; /* adjust if needed */
+}
+
+.video-thumbnail img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+.video-thumbnail .play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 60px;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+}
+
+.video-thumbnail:hover .play-button {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* --- Section Container (Sets up the max width and centering) --- */
+.aboutus-section {
+  padding: 60px 20px; /* Vertical padding and some side padding */
+  background-color: #f8f8f8; /* A light background color */
+}
+
+.section-first-container {
+  max-width: 1200px; /* Maximum width of the content area */
+  margin: 0 auto; /* Center the container on the page */
+}
+
+/* --- Two-Column Layout --- */
+.section-first-container > div {
+  display: flex; /* Enable flexbox for the main two columns */
+  gap: 50px; /* Space between the two columns (image/text) */
+  align-items: flex-start; /* Align items to the top */
+}
+
+/* Targeting the image/video column */
+.section-first-container > div > div:first-child {
+  flex: 1; /* Gives the first column (video/image) one part of the space */
+  min-width: 40%; /* Minimum width for the left column */
+}
+
+/* Targeting the text content column */
+.section-first-container > div > div:last-child {
+  flex: 1.5; /* Gives the second column (text) 1.5 parts of the space, making it wider */
+  padding-top: 10px; /* Small adjustment to align text baseline with the video top */
+}
+
+/* --- Heading Styles --- */
+h2 {
+  font-size: 48px; /* Large, bold heading */
+  font-weight: 700;
+  color: #222; /* Darker color for headings */
+  margin-bottom: 5px; /* Less space before the divider */
+  line-height: 1.1;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #222;
+  margin-top: 30px; /* Space before "About BlackIvy" */
+  margin-bottom: 15px;
+}
+
+/* --- Divider Style (The short blue line under the heading) --- */
+.fancy-divider {
+  margin-bottom: 30px;
+}
+
+.divider-separator {
+  width: 60px; /* Length of the blue line */
+  height: 3px; /* Thickness of the blue line */
+  background-color: #1e3b70; /* Indigo Blue Color */
+  margin: 0;
+}
+
+/* --- Video/Image Thumbnail Style (Left Column) --- */
+.video-thumbnail {
+  position: relative;
+  display: inline-block;
+  width: 100%; /* Make the container fill the column width */
+  max-width: 400px; /* Optional: Set a max size for the media block */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.video-thumbnail img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* The Play Button overlay */
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black circle */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 5px; /* Adjust for the triangle shape */
+  transition: background-color 0.3s;
+}
+
+.youtubelink:hover .play-button {
+  background-color: #1e3b70; /* Blue hover effect */
+}
+
+/* --- Text Paragraphs --- */
+.senoratexts p {
+  margin-bottom: 20px;
+}
+
+/* --- "BlackIvy Read More" Button (Assuming this is a link styled as a button) --- */
+a[href="https://www.blackivygroup.com/"]
+{
+  display: inline-block;
+  padding: 10px 25px;
+  background-color: #1e3b70; /* Indigo Blue Color */
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 5px;
+  margin-top: 15px;
+  transition: background-color 0.3s;
+}
+
+a[href="https://www.blackivygroup.com/"]:hover
+{
+  background-color: #142a53; /* Slightly darker blue on hover */
+}
+
+/* pro */
+/*
+====================================
+  PROJECTS SECTION (COMMUNITIES)
+====================================
+/*
+====================================
+  PROJECTS: RESIDENTIAL COMMUNITIES
+====================================
+*/
+.projects {
+  padding: 60px 20px;
+  text-align: center; /* Center the heading and divider */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.projects h3 {
+  /* Styles for "Our residential communities - in Nigeria" */
+  font-size: 38px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 5px;
+}
+
+/* Reusing the fancy divider */
+.projects .fancy-divider {
+  margin: 0 auto 50px;
+  width: fit-content;
+}
+
+/* --- 1. Top Section: Image Cards (3-Column Grid) --- */
+.residential-houses-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 50px; /* Space between images and text */
+}
+.residential-houses-container .bed {
+  font-weight: 1000;
+  font-size: 1.5rem;
+  /* color: black; */
+}
+
+/* --- Card Base Styles (The clickable <a> element) --- */
+.residential-card {
+  position: relative;
+  height: 350px;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+
+  display: block;
+  text-decoration: none;
+  color: white;
+
+  background-size: cover;
+  background-position: center;
+
+  /* Transition for the lift and filter effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.5s ease;
+}
+
+/* --- Background Images (Applied with a B&W filter) --- */
+.residential-house-greenwich {
+  background-image: url("assets/estate(new).jpg"); /* Using your existing URLs */
+  filter: grayscale(80%) brightness(85%);
+}
+.residential-house-oyarifa {
+  background-image: url("assets/estate.jpg");
+  filter: grayscale(80%) brightness(85%);
+}
+.residential-house-ayimensah {
+  background-image: url("assets/senora(estate303).jpg");
+  filter: grayscale(80%) brightness(85%);
+}
+
+/* --- Hover State (Full Color & Lift) --- */
+.residential-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  filter: grayscale(0%) brightness(100%); /* Removes filter */
+}
+
+/* --- Card Overlay Title (Community Name: h3 inside the card) --- */
+/* NOTE: The h3 in this context is different from the main section h3 */
+.residential-card h3 {
+  position: absolute;
+  bottom: 60px;
+  left: 20px;
+  font-size: 28px;
+  font-weight: 700;
+  text-align: left;
+  color: white;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+  margin: 0;
+  z-index: 2;
+}
+
+/* --- Price/Status Button Overlay (button-div) --- */
+.residential-card .button-div {
+  position: absolute;
+  bottom: 20px;
+  gap: 50px;
+  left: 20px;
+  right: 20px;
+  z-index: 3;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* --- Price/Status Tag Style (Button-like element) --- */
+.button-price {
+  background-color: #007bff; /* Primary Blue for price */
+  color: white;
+  padding: 8px 15px;
+  border-radius: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+  white-space: nowrap;
+  text-shadow: none;
+  display: inline-block;
+}
+
+/* --- Sold Out Status Styling (Red background) --- */
+.button-price.sold-out-button {
+  background-color: #dc3545; /* Red color for Sold Out */
+}
+
+/* --- 2. Middle Section: Text Descriptions (3-Column Grid) --- */
+.residential-text-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 50px;
+  text-align: left;
+}
+
+.community-title {
+  /* Styles for GreenwichPark, OyarifaPark titles above the paragraph */
+  font-size: 22px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.community-text-block p {
+  font-size: 15px;
+  color: #555;
+}
+
+/* --- 3. Bottom Section: Call-to-Action Note --- */
+.short-note-container {
+  background-color: #f8f8f8;
+  padding: 30px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.note-container {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.note-container p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #444;
+}
+
+/*
+====================================
+  CALL TO Brochure BANNER (The visible section)
+====================================
+*/
+.cta-banner {
+  padding-top: 50px; /* background-color: #f0f0f0;  */
+  display: flex;
+  justify-content: center; /* Center button horizontally */
+  align-items: center; /* Center button vertically */
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.05);
+}
+
+.brochure-btn {
+  /* Button style matching the image */
+  background-color: #1e3b70; /* Indigo Blue */
+  color: white;
+  padding: 15px 40px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.brochure-btn:hover {
+  background-color: #007bff; /* Primary blue hover effect */
+}
+
+/*
+====================================
+ Brochure MODAL OVERLAY & FORM STYLES
+====================================
+*/
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 20;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  /* This display: flex is set by JavaScript when modal is opened to center it */
+  justify-content: center;
+  align-items: center;
+}
+.modal .modal-image {
+  width: 1px;
+  height: 5%;
+  position: fixed;
+  z-index: 20;
+  /* left: 60%;
+    top: 6.8%; */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  padding: 30px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  text-align: left;
+}
+
+.close-btn {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+}
+.close-btn:hover,
+.close-btn:focus {
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-content h2 {
+  font-size: 24px;
+  color: #1e3b70;
+  margin-top: 0;
+}
+.modal-content p {
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.brochure-form input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.submit-btn {
+  width: 100%;
+  background-color: #007bff; /* Primary Blue */
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #1e3b70; /* Indigo Blue on hover */
+}
+
+/*
+====================================
+  PURPOSE SECTION
+====================================
+*/
+.purpose {
+  padding: 60px 20px;
+  background-color: #fff; /* White background */
+}
+
+.purpose-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex; /* Use flexbox for the two columns */
+  gap: 50px;
+  align-items: stretch; /* Ensures columns stretch to equal height */
+}
+
+/* --- Left Column: Media Styling --- */
+.purpose-media {
+  flex: 1.2; /* Slightly wider than the text column if needed, adjust as desired */
+  position: relative;
+}
+
+.purpose-image-wrapper {
+  position: relative;
+  height: 100%; /* Take full height of the container */
+}
+
+.purpose-media img {
+  display: block;
+  width: 100%;
+  /* Ensures the image covers the full height of the wrapper */
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Video Overlay Tag (OyarifaPark Completed) */
+.video-overlay-tag {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  /* Blue button-like background, matching the brand color */
+  background-color: rgba(
+    30,
+    59,
+    112,
+    0.85
+  ); /* Dark Indigo Blue, semi-transparent */
+  color: white;
+  padding: 10px 25px;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  /* Optional: Add a subtle shadow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Right Column: Content Styling --- */
+.purpose-content {
+  flex: 1;
+  text-align: left;
+  position: relative; /* Needed for positioning the accent bar */
+  padding-left: 20px; /* Space for the accent bar */
+}
+
+/* Vertical Yellow Accent Bar */
+.vertical-accent-bar {
+  position: absolute;
+  top: 0;
+  left: 0; /* Positioned just outside the text content */
+  width: 5px;
+  height: 100%;
+  background-color: #ffc72c; /* Bright Yellow/Gold Color */
+  /* Only visible if the text content column has a defined height */
+}
+
+/* --- Typography and Structure --- */
+.section-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #222;
+  margin-bottom: 40px;
+  margin-top: 15px; /* Adjust if needed to align vertically with image top */
+}
+
+.purpose-point {
+  margin-bottom: 30px;
+}
+
+.point-heading {
+  font-size: 16px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.purpose-point p {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Horizontal Separator Line (Black Line) */
+.point-separator {
+  border: none;
+  border-top: 2px solid #333; /* Dark/Black line */
+  width: 90%; /* Line length */
+  margin-left: 0; /* Align line to the left */
+  margin-bottom: 30px;
+}
+
+/*
+====================================
+  FOOTER SECTION
+====================================
+*/
+.footer {
+  background-color: #12121e; /* Very dark blue/black background */
+  color: #e0e0e0; /* Light gray text for contrast */
+  padding: 80px 20px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  text-align: left;
+}
+
+.footer-col {
+  /* Base style for all three columns */
+  flex: 1;
+  min-width: 250px; /* Ensures columns don't get too narrow */
+}
+
+/* --- Typography --- */
+.footer h4 {
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.footer p {
+  font-size: 14px;
+  color: #b0b0b0;
+  margin-bottom: 15px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+.mt-40 {
+  margin-top: 40px;
+}
+
+/* --- Column 1: Brand Info --- */
+.footer-read-more {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 15px;
+  margin-top: 10px;
+  background-color: #007bff; /* Primary Blue Button */
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+.footer-read-more:hover {
+  background-color: #1e3b70;
+}
+
+/* --- Column 2: Social Media & Address --- */
+.footer-social-address h4 {
+  position: relative;
+  /* Styles the underline under "Follow Us On Social Media" */
+}
+.footer-social-address h4:last-of-type::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background-color: #e0e0e0; /* Light line */
+}
+
+.social-icons {
+  margin-top: 25px;
+  display: flex;
+  gap: 20px;
+}
+.social-icons a {
+  color: #e0e0e0;
+  font-size: 24px;
+  transition: color 0.3s;
+}
+.social-icons a:hover {
+  color: #007bff; /* Highlight social icons on hover */
+}
+
+/* --- Column 3: Navigation Links --- */
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  /* The links use the same H4 style as their heading */
+}
+.footer-links a {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-size: 16px;
+  margin-bottom: 8px;
+  transition: color 0.3s;
+}
+.footer-links a:hover {
+  color: #007bff;
+}
+
+/*
+====================================
+  FOOTER RESPONSIVENESS
+====================================
+*/
+@media (max-width: 900px) {
+  .footer-container {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  .footer-col {
+    /* On medium screens, let columns take up half the width */
+    flex: 1 1 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-container {
+    flex-direction: column;
+  }
+  .footer-col {
+    /* On mobile, stack all columns vertically */
+    flex: 1 1 100%;
+  }
+}
+
+/* --- Responsiveness --- */
+@media (max-width: 900px) {
+  .purpose-container {
+    flex-direction: column; /* Stack columns vertically on tablets/phones */
+    gap: 30px;
+  }
+
+  /* Remove vertical accent bar on small screens for cleaner look */
+  .vertical-accent-bar {
+    display: none;
+  }
+
+  .purpose-content {
+    padding-left: 0;
+  }
+}
+
+/*
+====================================
+  MEDIA QUERIES (RESPONSIVENESS)
+====================================
+*/
+@media (max-width: 900px) {
+  /* Stacks the 3 image cards and 3 text blocks into 2 columns on tablets */
+  .residential-houses-container,
+  .residential-text-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Stacks all 3 sections into a single column on phones */
+  .residential-houses-container,
+  .residential-text-container {
+    grid-template-columns: 1fr;
+  }
+
+  .residential-card {
+    height: 300px;
+  }
+}
+
+/*
+====================================
+  MEDIA QUERIES (RESPONSIVENESS)
+====================================
+*/
+
+@media (max-width: 1000px) {
+  /* Switch to 2 columns for images and text */
+  .residential-houses-container,
+  .residential-text-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  /* Switch to 1 column for images and text on small phones */
+  .residential-houses-container,
+  .residential-text-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Media Queries for Responsiveness (For smaller screens) --- */
+@media (max-width: 900px) {
+  .section-first-container > div {
+    flex-direction: column; /* Stacks the columns vertically */
+    gap: 30px;
+  }
+
+  /* Make the image/video section full width on small screens */
+  .section-first-container > div > div:first-child {
+    min-width: 100%;
+    order: 2; /* Move the image below the text on small screens for better flow */
+    margin: 0 auto;
+  }
+
+  /* Make the text column full width on small screens and place it first */
+  .section-first-container > div > div:last-child {
+    order: 1;
+    width: 100%;
+    padding-top: 0;
+  }
+
+  h2 {
+    font-size: 36px;
+  }
+}
